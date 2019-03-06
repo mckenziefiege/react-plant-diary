@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import './css/styles.css'
-// import { Route, Switch, withRouter } from 'react-router-dom'
+import React, {Component} from 'react';
+import './css/styles.css';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Login from './Components/Login.js'
 import SignUp from './Components/SignUp.js'
 import Home from './Components/Home.js'
@@ -12,9 +12,10 @@ import ToDoList from './Components/ToDoList.js'
 import Task from './Components/Task.js'
 
 class App extends Component {
+
   state = {
-  auth: { currentUser: {} },
-}
+    auth: { currentUser: {} }
+  }
 
 componentDidMount () {
   const token = localStorage.getItem('token')
@@ -33,48 +34,52 @@ componentDidMount () {
   }
 }
 
-handleLogout = () => {
-  localStorage.removeItem("token")
-  this.setState({ auth: { currentUser: {} } })
-  this.props.history.push("/")
-}
+// handleLogout = () => {
+//   localStorage.removeItem("token")
+//   this.setState({ auth: { currentUser: {} } })
+//   this.props.history.push("/")
+// }
 
-handleLogin = (e) => {
-   e.preventDefault()
-   fetch("http://localhost:3000/login", {
-     method: "POST",
-     headers: {
-       "Content-Type": "application/json",
-       Accept: "application/json"
-     },
-     body: JSON.stringify({
-       user: {
-         username: e.target.username.value,
-         password: e.target.password.value
-       }
-     })
-   })
-     .then(resp => resp.json())
-     .then(resp => {
-       localStorage.setItem("token", resp.jwt)
-       this.setState({
-         auth: {currentUser: resp.user}
-       })
-     })
- }
+// handleLogin = (e) => {
+//    e.preventDefault()
+//    fetch("http://localhost:3000/login", {
+//      method: "POST",
+//      headers: {
+//        "Content-Type": "application/json",
+//        Accept: "application/json"
+//      },
+//      body: JSON.stringify({
+//        user: {
+//          username: e.target.username.value,
+//          password: e.target.password.value
+//        }
+//      })
+//    })
+//      .then(resp => resp.json())
+//      .then(resp => {
+//        localStorage.setItem("token", resp.jwt)
+//        this.setState({
+//          auth: {currentUser: resp.user}
+//        })
+//      })
+//  }
 
  handleSignup = (e) => {
    e.preventDefault()
    const options = {
      method: 'POST',
      headers: {'Content-Type': 'application/json'},
-     body: JSON.stringify({ user: {
-       first_name: e.target['first-name'].value,
-       username: e.target.username.value,
-       password: e.target.password.value,
-       image: e.target.image.value }
-     })
-   }
+     body: JSON.stringify (
+       {
+        user: {
+          username: e.target.username.value,
+          first_name: e.target.firstname.value,
+          password: e.target.password.value,
+          image: e.target.image.value
+        }
+      }
+    )
+  }
    fetch('http://localhost:3000/users', options)
      .then(resp => resp.json())
      .then(resp => {
@@ -85,21 +90,22 @@ handleLogin = (e) => {
      })
  }
 
+ renderSignup = () => {
+    return <SignUp handleSignup={this.handleSignup} />
+  }
+
   render() {
     return (
       <div>
-        <Login />
-        <Home />
-        <Navigation />
-        <Plant />
-        <UserPlants />
-        <UserProfile />
-        <SignUp />
-        <Task />
-        <ToDoList />
+        <Switch>
+           <Route path="/login" render={this.renderLogin}/>
+           <Route path="/signup" render={this.renderSignup}/>
+           <Route path="/" component={Home}/>
+        </Switch>
       </div>
     )
   }
+
 }
 
-export default App;
+export default withRouter(App);
