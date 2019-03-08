@@ -6,9 +6,9 @@ class Login extends Component {
     return (
       <div>
         <h3>Login</h3>
-        <form>
+        <form onSubmit={this.props.handleLogin}>
           <input type="text" name="username" placeholder="Username"/>
-          <input type="text" name="password" placeholder="Password"/>
+          <input type="password" name="password" placeholder="Password"/>
           <input type="submit"/>
         </form>
       </div>
