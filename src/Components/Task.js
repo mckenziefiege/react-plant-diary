@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 class Task extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        <p>Task</p>
+        {this.props.taskObj.content}
+        <button onClick={() => this.props.deleteTask(this.props.taskObj.id)}>X</button>
       </div>
     )
   }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 class NewPlantForm extends Component {
-
   render() {
     return (
       <div>

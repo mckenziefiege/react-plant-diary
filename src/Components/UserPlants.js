@@ -10,7 +10,6 @@ class UserPlants extends Component {
 }
 
   render() {
-
     return (
       <div>
         {this.getPlants()}
