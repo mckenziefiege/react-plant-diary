@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
+}
 *,
 *::after,
 *::before {
@@ -14,6 +20,31 @@ body {
   color: #777777;
   padding: 2rem;
 }
+.plant-list-card a,
+.plant-list-card a:visited,
+.plant-list-card a:active {
+  text-decoration: none;
+  color: #777777;
+  cursor: pointer;
+}
 .plant-list-card__image {
-  height: 25rem;
+  height: 28rem;
+  margin: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.user-plants-container {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  justify-items: center;
+}
+.heading-tertiary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  font-weight: 100;
 }
