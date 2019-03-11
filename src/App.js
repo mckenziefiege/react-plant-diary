@@ -160,7 +160,7 @@ handleLogin = (e) => {
   render() {
     return (
       <div>
-      <Navigation handleLogout={this.handleLogout} />
+      <Navigation user={this.state.auth.currentUser} handleLogout={this.handleLogout} />
         <Switch>
            <Route path="/login" render={this.renderLogin}/>
            <Route path="/signup" render={this.renderSignup}/>
