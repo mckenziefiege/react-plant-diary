@@ -4,15 +4,9 @@ class Plant extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-        <h3>{this.props.plantObj.nickname}</h3>
-        <p>{this.props.plantObj.species}</p>
-        <img src={this.props.plantObj.image} alt="Plant `${this.props.plantObj.id}`"/>
-        <p>{this.props.plantObj.watering_frequency}</p>
-        <p>{this.props.plantObj.date_obtained}</p>
-        <p>{this.props.plantObj.location}</p>
-        </div>
+      <div className="plant-list-card">
+        <h3 className="heading-tertiary">{this.props.plantObj.nickname}</h3>
+        <img className="plant-list-card__image" src={this.props.plantObj.image} alt="Plant `${this.props.plantObj.id}`"/>
       </div>
     )
   }
