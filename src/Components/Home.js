@@ -5,11 +5,14 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="heading-tertiary">Welcome to</h3>
-        <h1 className="heading-primary">Plant Diary</h1>
-        <Link to="/login"><button className="btn">Login</button></Link>
-        <Link to="/signup"><button className="btn">Sign Up</button></Link>
+      <div className="home">
+      <h1 className="heading-primary">Welcome to Plant Diary</h1>
+        <div className="home-box">
+          <Link to="/login"><button className="btn">Login</button></Link>
+          <Link to="/signup"><button className="btn">Sign Up</button></Link>
+        </div>
+        <div className="home-page">
+        </div>
       </div>
     )
   }

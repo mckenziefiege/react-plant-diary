@@ -9,7 +9,6 @@ class UserProfile extends Component {
     return (
       <div>
         <h3 className="heading-tertiary">Welcome {this.props.user.first_name}!</h3>
-        <img className="user-photo" src={this.props.user.image}/>
         <NewPlantForm createNewPlant={this.props.createNewPlant}/>
         <ToDoList tasks={this.props.tasks} createNewTask={this.props.createNewTask} deleteTask={this.props.deleteTask}/>
         <UserPlants plants={this.props.plants}/>
