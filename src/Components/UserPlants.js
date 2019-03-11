@@ -11,7 +11,7 @@ class UserPlants extends Component {
 
   render() {
     return (
-      <div>
+      <div className="user-plants-container">
         {this.getPlants()}
       </div>
     )
