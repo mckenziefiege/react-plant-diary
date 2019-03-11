@@ -11,21 +11,21 @@
   padding: 0;
   box-sizing: inherit;
 }
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #777777;
+  cursor: pointer;
+}
 html {
   font-size: 62.5%;
 }
 body {
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #777777;
   padding: 2rem;
-}
-.plant-list-card a,
-.plant-list-card a:visited,
-.plant-list-card a:active {
-  text-decoration: none;
-  color: #777777;
-  cursor: pointer;
 }
 .plant-list-card__image {
   height: 28rem;
@@ -40,11 +40,61 @@ body {
   grid-gap: 5rem;
   justify-items: center;
 }
+.heading-primary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+}
 .heading-tertiary {
   font-size: 2rem;
   text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
   letter-spacing: 0.3rem;
   font-weight: 100;
+}
+.form {
+  padding: 1rem;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1rem 1rem;
+  display: block;
+  width: 40%;
+}
+.form__label {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  letter-spacing: 0.1rem;
+}
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 10rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.task {
+  font-size: 1.2rem;
+  display: inline;
+  letter-spacing: 0.1rem;
+  margin-left: 2rem;
+}
+.user-photo {
+  height: 10rem;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  position: relative;
 }

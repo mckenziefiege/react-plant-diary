@@ -12,12 +12,17 @@ class ToDoList extends Component {
   render() {
     return (
       <div>
-      To Do:
+      <h3 className="heading-tertiary">To Do</h3>
         {this.getTasks()}
-      <form onSubmit={this.props.createNewTask}>
-        <input type="text" name="content"/>
-        <input type="submit" />
-      </form>
+        <form className="form" onSubmit={this.props.createNewTask}>
+          <div className="form__group">
+            <input className="form__input"type="text" name="content"/>
+            <label className="form__label">Content</label>
+          </div>
+          <div className="form__group">
+            <input className="btn"type="submit" />
+          </div>
+        </form>
       </div>
     )
   }

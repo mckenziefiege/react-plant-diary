@@ -6,8 +6,8 @@ class Task extends Component {
     console.log(this.props)
     return (
       <div>
-        {this.props.taskObj.content}
-        <button onClick={() => this.props.deleteTask(this.props.taskObj.id)}>X</button>
+        <p className="task">{this.props.taskObj.content}</p>
+        <button className="btn" onClick={() => this.props.deleteTask(this.props.taskObj.id)}>X</button>
       </div>
     )
   }
