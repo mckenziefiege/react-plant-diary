@@ -6,13 +6,12 @@ import SignUp from './Components/SignUp.js'
 import Home from './Components/Home.js'
 import Navigation from './Components/Navigation.js'
 import UserProfile from './Components/UserProfile.js'
-import ToDoList from './Components/ToDoList.js'
-import Task from './Components/Task.js'
+import PlantPage from './Components/PlantPage.js'
 
 class App extends Component {
-
   state = {
-    auth: { currentUser: {} }
+    auth: { currentUser: {} },
+    plants: []
   }
 
 componentDidMount () {
@@ -26,7 +25,9 @@ componentDidMount () {
     .then(resp => resp.json())
     .then(resp =>
       this.setState({
-        auth: {currentUser: resp.user}
+        auth: {currentUser: resp.user},
+        plants: resp.user.plants,
+        tasks: resp.user.tasks
       })
     )
   }
@@ -90,6 +91,60 @@ handleLogin = (e) => {
      this.props.history.push("/userfeed")
  }
 
+ createNewPlant = (e) => {
+   e.preventDefault()
+   const options = {
+     method: 'POST',
+     headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+     body: JSON.stringify ({
+          nickname: e.target.nickname.value,
+          species: e.target.species.value,
+          image: e.target.image.value,
+          location: e.target.location.value,
+          watering_frequency: e.target.watering_frequency.value,
+          date_obtained: e.target.date_obtained.value,
+          user_id: this.state.auth.currentUser.id
+        })
+       }
+       fetch('http://localhost:3000/plants', options)
+         .then(resp => resp.json())
+         .then(resp => this.setState({
+           plants: [...this.state.plants, resp]
+         }))
+     }
+
+     createNewTask = (e) => {
+       e.preventDefault()
+       const options = {
+         method: 'POST',
+         headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+         body: JSON.stringify ({
+              content: e.target.content.value,
+              user_id: this.state.auth.currentUser.id
+            })
+           }
+           fetch('http://localhost:3000/tasks', options)
+             .then(resp => resp.json())
+             .then(resp => this.setState({
+               tasks: [...this.state.tasks, resp]
+             }))
+         }
+
+         deleteTask = (id) => {
+           const options = {
+             method: 'DELETE',
+             headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+            }
+             let newTasks = this.state.tasks.filter(task => task.id !== id)
+             console.log(newTasks)
+             fetch(`http://localhost:3000/tasks/${id}`, options)
+              this.setState({
+                tasks: newTasks
+              })
+          }
+
+
+
  renderSignup = () => {
     return <SignUp handleSignup={this.handleSignup} />
   }
@@ -99,7 +154,7 @@ handleLogin = (e) => {
    }
 
    renderUserProfile = () => {
-      return <UserProfile user={this.state.auth.currentUser} />
+      return <UserProfile user={this.state.auth.currentUser} plants={this.state.plants} createNewPlant={this.createNewPlant} createNewTask={this.createNewTask} tasks={this.state.tasks} deleteTask={this.deleteTask}/>
     }
 
   render() {
@@ -109,6 +164,7 @@ handleLogin = (e) => {
         <Switch>
            <Route path="/login" render={this.renderLogin}/>
            <Route path="/signup" render={this.renderSignup}/>
+           <Route path="/plant-page" component={PlantPage}/>
            <Route path="/userfeed" render={this.renderUserProfile}/>
            <Route path="/" component={Home}/>
         </Switch>
