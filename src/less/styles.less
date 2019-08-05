@@ -22,16 +22,8 @@ body {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   color: rgb(119, 119, 119);
-  padding: 2rem;
 }
 
-.home-box {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  z-index: 100;
-  background-color:
-}
 
 .home {
   background-image: url('https://images.unsplash.com/photo-1502920873987-ac48e660a95d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
@@ -125,4 +117,34 @@ body {
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
   position: relative;
+}
+
+.footer {
+  background-color: lighten(rgb(119, 119, 119), 50%);
+  padding: 3rem;
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  background-color: lighten(rgb(119, 119, 119), 50%);
+
+  &__item:not(:last-child) {
+    border-right: .5px solid rgb(119, 119, 119);
+  }
+
+  &__item {
+
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    height: 100%;
+    padding: 2.5rem;
+    width: 100%;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
