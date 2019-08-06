@@ -6,8 +6,8 @@ class Plant extends Component {
   render() {
     return (
       <div className="plant-list-card">
-        <Link to={'/plant-page'}><h3 className="heading-tertiary">{this.props.plantObj.nickname}</h3></Link>
-        <img className="plant-list-card__image" src={this.props.plantObj.image} alt="Plant `${this.props.plantObj.id}`"/>
+        <Link to="/plant-page"><h3 className="heading-tertiary">{this.props.plantObj.nickname}</h3></Link>
+        <img className="plant-list-card__image" src={this.props.plantObj.image} alt={this.props.plantObj.id}/>
       </div>
     )
   }
