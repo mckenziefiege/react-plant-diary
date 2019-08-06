@@ -1,150 +1,150 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-a, a:visited, a:active {
-  text-decoration: none;
-  color: rgb(119, 119, 119);
-  cursor: pointer;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-  color: rgb(119, 119, 119);
-}
-
-
-.home {
-  background-image: url('https://images.unsplash.com/photo-1502920873987-ac48e660a95d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-  height: 95vh;
-  background-size: cover;
-  background-position: top;
-  position: relative;
-}
-
-.plant-list-card {
-
-  &__image {
-    height: 28rem;
-    margin: 1rem;
-    border-radius: 2px;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-  }
-}
-
-.user-plants-container {
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5rem;
-  justify-items: center;
-}
-
-.heading-primary {
-  font-size: 3rem;
-  text-transform: uppercase;
-  letter-spacing: .5rem;
-  font-weight: 100;
-  padding: 2rem;
-  opacity: .9;
-}
-
-.heading-tertiary {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: .3rem;
-  font-weight: 100;
-}
-
-.form {
-  padding: 1rem;
-  &__group:not(:last-child) {
-       margin-bottom: 1.5rem;
-   }
-
-    &__input {
-      font-size: 1.5rem;
-      font-family: inherit;
-      color: inherit;
-      padding: 1rem 1rem;
-      display: block;
-      width: 40%;
-    }
-
-    &__label {
-      font-size: 1.2rem;
-      margin-left: 2rem;
-      margin-top: .7rem;
-      display: block;
-      letter-spacing: .1rem;
-    }
-}
-
-.btn {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-  padding: 1rem 2rem;
-  display: inline-block;
-  border-radius: 10rem;
-  font-size: 1.2rem;
-  letter-spacing: .1rem;
-  cursor: pointer;
-}
-
-.task {
-  font-size: 1.2rem;
-  display: inline;
-  letter-spacing: .1rem;
-  margin-left: 2rem;
-}
-
-.user-photo {
-  height: 5rem;
-  -webkit-shape-outside: circle(50% at 50% 50%);
-  shape-outside: circle(50% at 50% 50%);
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
-  position: relative;
-}
-
-.footer {
-  background-color: lighten(rgb(119, 119, 119), 50%);
-  padding: 3rem;
-}
-
-.nav-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  background-color: lighten(rgb(119, 119, 119), 50%);
-
-  &__item:not(:last-child) {
-    border-right: .5px solid rgb(119, 119, 119);
-  }
-
-  &__item {
-
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    height: 100%;
-    padding: 2.5rem;
-    width: 100%;
-    text-align: center;
-
-    a {
-      text-decoration: none;
-    }
-  }
-}
+// @import url('https://fonts.googleapis.com/css?family=Raleway');
+//
+// *,
+// *::after,
+// *::before {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
+//
+// a, a:visited, a:active {
+//   text-decoration: none;
+//   color: rgb(119, 119, 119);
+//   cursor: pointer;
+// }
+//
+// html {
+//   font-size: 62.5%;
+// }
+//
+// body {
+//   box-sizing: border-box;
+//   font-family: 'Raleway', sans-serif;
+//   color: rgb(119, 119, 119);
+// }
+//
+//
+// .home {
+//   background-image: url('https://images.unsplash.com/photo-1502920873987-ac48e660a95d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+//   height: 95vh;
+//   background-size: cover;
+//   background-position: top;
+//   position: relative;
+// }
+//
+// .plant-list-card {
+//
+//   &__image {
+//     height: 28rem;
+//     margin: 1rem;
+//     border-radius: 2px;
+//     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+//   }
+// }
+//
+// .user-plants-container {
+//   margin: 1rem;
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-gap: 5rem;
+//   justify-items: center;
+// }
+//
+// .heading-primary {
+//   font-size: 3rem;
+//   text-transform: uppercase;
+//   letter-spacing: .5rem;
+//   font-weight: 100;
+//   padding: 2rem;
+//   opacity: .9;
+// }
+//
+// .heading-tertiary {
+//   font-size: 2rem;
+//   text-transform: uppercase;
+//   letter-spacing: .3rem;
+//   font-weight: 100;
+// }
+//
+// .form {
+//   padding: 1rem;
+//   &__group:not(:last-child) {
+//        margin-bottom: 1.5rem;
+//    }
+//
+//     &__input {
+//       font-size: 1.5rem;
+//       font-family: inherit;
+//       color: inherit;
+//       padding: 1rem 1rem;
+//       display: block;
+//       width: 40%;
+//     }
+//
+//     &__label {
+//       font-size: 1.2rem;
+//       margin-left: 2rem;
+//       margin-top: .7rem;
+//       display: block;
+//       letter-spacing: .1rem;
+//     }
+// }
+//
+// .btn {
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   color: inherit;
+//   padding: 1rem 2rem;
+//   display: inline-block;
+//   border-radius: 10rem;
+//   font-size: 1.2rem;
+//   letter-spacing: .1rem;
+//   cursor: pointer;
+// }
+//
+// .task {
+//   font-size: 1.2rem;
+//   display: inline;
+//   letter-spacing: .1rem;
+//   margin-left: 2rem;
+// }
+//
+// .user-photo {
+//   height: 5rem;
+//   -webkit-shape-outside: circle(50% at 50% 50%);
+//   shape-outside: circle(50% at 50% 50%);
+//   -webkit-clip-path: circle(50% at 50% 50%);
+//   clip-path: circle(50% at 50% 50%);
+//   position: relative;
+// }
+//
+// .footer {
+//   background-color: lighten(rgb(119, 119, 119), 50%);
+//   padding: 3rem;
+// }
+//
+// .nav-container {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   justify-items: center;
+//   background-color: lighten(rgb(119, 119, 119), 50%);
+//
+//   &__item:not(:last-child) {
+//     border-right: .5px solid rgb(119, 119, 119);
+//   }
+//
+//   &__item {
+//
+//     font-size: 1.3rem;
+//     text-transform: uppercase;
+//     height: 100%;
+//     padding: 2.5rem;
+//     width: 100%;
+//     text-align: center;
+//
+//     a {
+//       text-decoration: none;
+//     }
+//   }
+// }

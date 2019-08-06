@@ -62,7 +62,9 @@ handleLogin = (e) => {
      .then(resp => {
        localStorage.setItem("token", resp.jwt)
        this.setState({
-         auth: {currentUser: resp.user}
+         auth: {currentUser: resp.user},
+         plants: resp.user.plants,
+         tasks: resp.user.tasks
        })
      })
     this.props.history.push("/userfeed")
@@ -72,7 +74,9 @@ handleLogin = (e) => {
    e.preventDefault()
    const options = {
      method: 'POST',
-     headers: {'Content-Type': 'application/json'},
+     headers: {
+       "Content-Type": "application/json"
+     },
      body: JSON.stringify (
        {
         user: {
