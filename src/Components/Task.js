@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 class Task extends Component {
 
   render() {
-    console.log(this.props)
     return (
       <div>
-        <p className="task">{this.props.taskObj.content}</p>
+        <p className="task">{this.props.taskObj.content} </p>
         <button className="btn" onClick={() => this.props.deleteTask(this.props.taskObj.id)}>X</button>
       </div>
     )

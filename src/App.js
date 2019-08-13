@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import './css/styles.css'
+import React, { Component } from "react"
 import { Route, Switch, withRouter } from 'react-router-dom'
 import Login from './Components/Login.js'
 import SignUp from './Components/SignUp.js'
 import Home from './Components/Home.js'
 import Navigation from './Components/Navigation.js'
 import UserProfile from './Components/UserProfile.js'
-import PlantPage from './Components/PlantPage.js'
 import Footer from './Components/Footer.js'
 import NewPlantForm from './Components/NewPlantForm.js'
 import ToDoList from './Components/ToDoList.js'
+import PlantPage from './Components/PlantPage.js'
+
+import './css/styles.css'
 
 class App extends Component {
   state = {
@@ -103,7 +104,7 @@ handleLogin = (e) => {
    e.preventDefault()
    const options = {
      method: 'POST',
-     headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+     headers: {"Content-Type": "application/json", "Authorization": `Bearer ${localStorage.getItem('token')}`},
      body: JSON.stringify ({
           nickname: e.target.nickname.value,
           species: e.target.species.value,
@@ -171,6 +172,12 @@ handleLogin = (e) => {
       return <ToDoList tasks={this.state.tasks} createNewTask={this.createNewTask} deleteTask={this.deleteTask}/>
     }
 
+    renderPlantPage = (props) => {
+      let id = parseInt(props.match.params.plantsId)
+      let plant = this.state.plants.filter(obj => obj.id === id)[0]
+      return <PlantPage plant={plant}/>
+    }
+
   render() {
     return (
       <div>
@@ -180,7 +187,7 @@ handleLogin = (e) => {
            <Route path="/signup" render={this.renderSignup}/>
            <Route path="/add-plant" render={this.renderNewPlantForm}/>
            <Route path="/todos" render={this.renderToDoList}/>
-           <Route path="/plant-page" component={PlantPage}/>
+           <Route exact path="/plants/:plantsId" render={this.renderPlantPage} />
            <Route path="/userfeed" render={this.renderUserProfile}/>
            <Route path="/" component={Home}/>
         </Switch>

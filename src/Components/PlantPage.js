@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 class PlantPage extends Component {
-
   render() {
+    console.log(this.props.plant)
     return (
       <div>
-        ON PLant page
+        <h1>{this.props.plant && this.props.plant.nickname}</h1>
       </div>
     )
   }

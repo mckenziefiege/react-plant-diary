@@ -8,14 +8,11 @@ class Navigation extends Component {
       <div className="nav-container">
         <Link to="/add-plant"><p className="nav-container__item">Add a Plant</p></Link>
         <Link to="/todos"><p className="nav-container__item">My Todos</p></Link>
-        <p className="nav-container__item">My Plants</p>
-        <p className="nav-container__item" onClick={this.props.handleLogout}>Log Out</p>
+        <Link to="/userfeed"><p className="nav-container__item">Home</p></Link>
+        <button className="nav-container__item" onClick={this.props.handleLogout}>Log Out</button>
       </div>
     )
   }
 }
 
 export default Navigation;
-
-
-  // <img className="user-photo" src={this.props.user.image}/>
