@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import UserPlants from './UserPlants.js'
-// import NewPlantForm from './NewPlantForm.js'
 
 class UserProfile extends Component {
 
