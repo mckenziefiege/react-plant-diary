@@ -6,10 +6,12 @@ class Plant extends Component {
   render() {
     const {plantObj} = this.props
     return (
-      <div className="plant-list-card">
-        <Link to={`/plants/${plantObj.id}`}><h3 className="heading-tertiary">{plantObj.nickname} </h3></Link>
-        <img className="plant-list-card__image" src={plantObj.image} alt={plantObj.id}/>
-      </div>
+      <Link to={`/plants/${plantObj.id}`}>
+        <div className="plant-list-card">
+          <h3 className="heading-tertiary">{plantObj.nickname} </h3>
+          <img className="plant-list-card__image" src={plantObj.image} alt={plantObj.id}/>
+        </div>
+      </Link>
     )
   }
 }
