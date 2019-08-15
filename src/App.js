@@ -16,13 +16,14 @@ class App extends Component {
   state = {
     auth: { currentUser: {} },
     plants: [],
-    tasks: []
+    tasks: [],
+    comments: []
   }
 
 componentDidMount () {
   const token = localStorage.getItem('token')
   if (token) {
-    fetch('http://localhost:3000/profile', {
+    fetch("http://localhost:3000/profile", {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -32,7 +33,8 @@ componentDidMount () {
       this.setState({
         auth: {currentUser: resp.user},
         plants: resp.user.plants,
-        tasks: resp.user.tasks
+        tasks: resp.user.tasks,
+        comments: resp.user.comments
       })
     )
   }
@@ -152,7 +154,24 @@ handleLogin = (e) => {
         })
     }
 
- renderSignup = () => {
+    createNewEntry = (e, plantId) => {
+      e.preventDefault()
+      const options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+        body: JSON.stringify ({
+             content: e.target.content.value,
+             plant_id: plantId,
+             user_id: this.state.auth.currentUser.id
+           })
+          }
+        fetch('http://localhost:3000/comments', options)
+          .then(resp => resp.json())
+          .then(resp => console.log(resp))
+      }
+
+
+  renderSignup = () => {
     return <SignUp handleSignup={this.handleSignup} />
   }
 
@@ -175,7 +194,8 @@ handleLogin = (e) => {
     renderPlantPage = (props) => {
       let id = parseInt(props.match.params.plantsId)
       let plant = this.state.plants.filter(obj => obj.id === id)[0]
-      return <PlantPage plant={plant}/>
+      let comments = this.state.comments.filter(obj => obj.plant_id === id)
+      return <PlantPage plant={plant} comments={comments} createNewEntry={this.createNewEntry}/>
     }
 
   render() {
