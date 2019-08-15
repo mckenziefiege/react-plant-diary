@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import PlantEntryForm from './PlantEntryForm.js'
 import Comment from './Comment.js'
+import PlantEntryForm from './PlantEntryForm.js'
 
 class PlantPage extends Component {
   render() {
-    const {plant} = this.props
-    const comments = plant && plant.comments.map(comment => <Comment key={comment.created_at} comment={comment}/>)
+    const {plant, comments, userId} = this.props
+    const allComments = comments && comments.map(comment => <Comment comment={comment}/>)
     return (
       <div>
         <h1>{plant && plant.nickname}</h1>
@@ -13,8 +13,8 @@ class PlantPage extends Component {
         <p>Watering Frequency: {plant && plant.watering_frequency}</p>
         <p>Location: {plant && plant.location}</p>
         <img src={plant && plant.image} alt={plant && plant.nickname}/>
-        <PlantEntryForm plantId={plant && plant.id}/>
-        {comments}
+        <PlantEntryForm plantId={plant && plant.id} userId={userId && userId} createNewEntry={this.props.createNewEntry}/>
+        {allComments}
       </div>
     )
   }
