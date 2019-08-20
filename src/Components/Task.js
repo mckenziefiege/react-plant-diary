@@ -5,8 +5,8 @@ class Task extends Component {
   render() {
     const {taskObj, deleteTask} = this.props
     return (
-      <div>
-        <p className="task">{taskObj.content} </p>
+      <div className="task">
+        <p className="task-name">{taskObj.content} </p>
         <button className="btn" onClick={() => deleteTask(taskObj.id)}>X</button>
       </div>
     )

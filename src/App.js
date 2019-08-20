@@ -1,16 +1,13 @@
 import React, { Component } from "react"
-import { Route, Switch, withRouter } from 'react-router-dom'
-import Login from './Components/Login.js'
-import SignUp from './Components/SignUp.js'
-import Home from './Components/Home.js'
-import Navigation from './Components/Navigation.js'
-import UserProfile from './Components/UserProfile.js'
-import Footer from './Components/Footer.js'
-import NewPlantForm from './Components/NewPlantForm.js'
-import ToDoList from './Components/ToDoList.js'
-import PlantPage from './Components/PlantPage.js'
-
-import './css/styles.css'
+import { Route, Switch, withRouter } from "react-router-dom"
+import Login from "./Components/Login.js"
+import SignUp from "./Components/SignUp.js"
+import Home from "./Components/Home.js"
+import Navigation from "./Components/Navigation.js"
+import UserProfile from "./Components/UserProfile.js"
+import Footer from "./Components/Footer.js"
+import PlantPage from "./Components/PlantPage.js"
+import "./css/styles.css"
 
 class App extends Component {
   state = {
@@ -176,37 +173,28 @@ handleLogin = (e) => {
   }
 
   renderLogin = () => {
-     return <Login handleLogin={this.handleLogin} />
-   }
+    return <Login handleLogin={this.handleLogin} />
+  }
 
-   renderUserProfile = () => {
-      return <UserProfile user={this.state.auth.currentUser} plants={this.state.plants} createNewPlant={this.createNewPlant} createNewTask={this.createNewTask} tasks={this.state.tasks} deleteTask={this.deleteTask}/>
-    }
+  renderUserProfile = () => {
+    return <UserProfile user={this.state.auth.currentUser} plants={this.state.plants} createNewPlant={this.createNewPlant} createNewTask={this.createNewTask} tasks={this.state.tasks} deleteTask={this.deleteTask}/>
+  }
 
-    renderNewPlantForm = () => {
-      return <NewPlantForm createNewPlant={this.createNewPlant}/>
-    }
-
-    renderToDoList = () => {
-      return <ToDoList tasks={this.state.tasks} createNewTask={this.createNewTask} deleteTask={this.deleteTask}/>
-    }
-
-    renderPlantPage = (props) => {
-      let id = parseInt(props.match.params.plantsId)
-      let plant = this.state.plants.filter(obj => obj.id === id)[0]
-      let comments = this.state.comments.filter(obj => obj.plant_id === id)
-      return <PlantPage plant={plant} comments={comments} createNewEntry={this.createNewEntry}/>
-    }
+  renderPlantPage = (props) => {
+    let id = parseInt(props.match.params.plantsId)
+    let plant = this.state.plants.filter(obj => obj.id === id)[0]
+    let comments = this.state.comments.filter(obj => obj.plant_id === id)
+    return <PlantPage plant={plant} comments={comments} createNewEntry={this.createNewEntry}/>
+  }
 
   render() {
+    const token = localStorage.getItem('token')
     return (
       <div>
-      <Navigation user={this.state.auth.currentUser} handleLogout={this.handleLogout} />
+      {token && <Navigation user={this.state.auth.currentUser} handleLogout={this.handleLogout} />}
         <Switch>
            <Route path="/login" render={this.renderLogin}/>
            <Route path="/signup" render={this.renderSignup}/>
-           <Route path="/add-plant" render={this.renderNewPlantForm}/>
-           <Route path="/todos" render={this.renderToDoList}/>
            <Route exact path="/plants/:plantsId" render={this.renderPlantPage} />
            <Route path="/userfeed" render={this.renderUserProfile}/>
            <Route path="/" component={Home}/>
