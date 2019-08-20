@@ -4,20 +4,9 @@
   font-weight: 400;
   src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
 }
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-a,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: #777777;
-  cursor: pointer;
-}
+
+/*
+
 html {
   font-size: 62.5%;
 }
@@ -33,33 +22,8 @@ body {
   background-position: top;
   position: relative;
 }
-.plant-list-card__image {
-  height: 28rem;
-  margin: 1rem;
-  border-radius: 2px;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-}
-.user-plants-container {
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5rem;
-  justify-items: center;
-}
-.heading-primary {
-  font-size: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  font-weight: 100;
-  padding: 2rem;
-  opacity: 0.9;
-}
-.heading-tertiary {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  font-weight: 100;
-}
+
+
 .form {
   padding: 1rem;
 }
@@ -129,4 +93,71 @@ body {
 }
 .nav-container__item a {
   text-decoration: none;
+} */
+
+
+.heading-primary {
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+  opacity: 0.9;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #777777;
+  cursor: pointer;
+}
+
+.heading-tertiary {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+}
+
+.plant-list-card {
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-plants-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 65vw;
+  justify-items: center;
+}
+
+.plant-list-card__image {
+  height: 15rem;
+  margin: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.task {
+  display: flex;
+  margin: 10px 0;
+}
+
+html {
+  font-family: 'Raleway';
+}
+
+.user-profile {
+  justify-content: center;
+  display: flex;
 }

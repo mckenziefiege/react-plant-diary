@@ -6,8 +6,11 @@ class UserPlants extends Component {
     const {plants} = this.props
     const allPlants = plants !== undefined && plants.map(plant => <Plant plantObj={plant} key={plant.id}/>)
     return (
-      <div className="user-plants-container">
-        {allPlants}
+      <div>
+      <h3 className="heading-primary">My plants</h3>
+        <div className="user-plants-container">
+          {allPlants}
+        </div>
       </div>
     )
   }

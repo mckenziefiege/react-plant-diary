@@ -4,7 +4,7 @@ class NewPlantForm extends Component {
   render() {
     return (
       <div>
-      <h3 className="heading-tertiary">New Plant Form</h3>
+      <h3 className="heading-primary">New Plant Form</h3>
         <form className="form" onSubmit={this.props.createNewPlant}>
           <div className="form__group">
             <input className="form__input" type="text" name="nickname"/>
