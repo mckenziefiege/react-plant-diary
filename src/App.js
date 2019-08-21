@@ -199,7 +199,7 @@ handleLogin = (e) => {
            <Route path="/userfeed" render={this.renderUserProfile}/>
            <Route path="/" component={Home}/>
         </Switch>
-        <Footer />
+        {/*}<Footer />*/}
       </div>
     )
   }

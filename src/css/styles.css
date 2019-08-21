@@ -161,3 +161,13 @@ html {
   justify-content: center;
   display: flex;
 }
+
+.plant-page {
+  display: flex;
+}
+
+.plant-page__image {
+  width: 300px;
+  border-radius: 2px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
