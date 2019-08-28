@@ -5,14 +5,16 @@ class ToDoList extends Component {
 
   render() {
     const {tasks, deleteTask, createNewTask} = this.props
-    const allTasks = tasks !== undefined && tasks.map(task => <Task taskObj={task} key={task.id} deleteTask={deleteTask}/>)
+    const allTasks = tasks !== undefined && tasks.map(task => <li><Task taskObj={task} key={task.id} deleteTask={deleteTask}/></li>)
     return (
       <div>
       <h3 className="heading-primary">My To Do's</h3>
-        {allTasks}
+        <ul>
+          {allTasks}
+        </ul>
         <form className="form" onSubmit={createNewTask}>
           <div className="form__group">
-            <label className="form__label">Create New To Do:</label>
+            <label className="form__label">New Task</label>
             <input className="form__input" type="text" name="content"/>
           </div>
           <div className="form__group">
