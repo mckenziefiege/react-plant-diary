@@ -45,17 +45,6 @@ body {
   display: block;
   letter-spacing: 0.1rem;
 }
-.btn {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-  padding: 1rem 2rem;
-  display: inline-block;
-  border-radius: 10rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  cursor: pointer;
-}
 .task {
   font-size: 1.2rem;
   display: inline;
@@ -170,4 +159,47 @@ html {
   width: 300px;
   border-radius: 2px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  font-size: 15px;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  cursor: pointer;
+  background-color: white;
+}
+
+.btn:hover {
+  color: green;
+}
+
+.delete-btn {
+  padding: 3px 5px;
+  background-color: transparent;
+  border-radius: 2px;
+  margin: 0 0 0 5px;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.form {
+  margin: 10px 0;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.form__input {
+  font-size: 15px;
+  font-family: inherit;
+  color: inherit;
+  padding: 10px 5px;
+  display: block;
+  width: 300px;
+}
+.form__label {
+  font-size: 12px;
+  letter-spacing: 0.1rem;
 }

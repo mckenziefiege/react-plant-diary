@@ -7,7 +7,7 @@ class Task extends Component {
     return (
       <div className="task">
         <p className="task-name">{taskObj.content} </p>
-        <button className="btn" onClick={() => deleteTask(taskObj.id)}>X</button>
+        <button className="delete-btn" onClick={() => deleteTask(taskObj.id)}>X</button>
       </div>
     )
   }
