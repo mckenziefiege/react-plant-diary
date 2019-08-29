@@ -101,6 +101,7 @@ handleLogin = (e) => {
 
  createNewPlant = (e) => {
    e.preventDefault()
+   debugger
    const options = {
      method: 'POST',
      headers: {"Content-Type": "application/json", "Authorization": `Bearer ${localStorage.getItem('token')}`},
@@ -136,6 +137,8 @@ handleLogin = (e) => {
              .then(resp => this.setState({
                tasks: [...this.state.tasks, resp]
              }))
+
+          document.getElementById("task-form").reset();
          }
 
    deleteTask = (id) => {
