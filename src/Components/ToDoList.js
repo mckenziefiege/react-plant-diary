@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Task from './Task.js'
 
 class ToDoList extends Component {
-
   render() {
     const {tasks, deleteTask, createNewTask} = this.props
     const allTasks = tasks !== undefined && tasks.map(task => <li><Task taskObj={task} key={task.id} deleteTask={deleteTask}/></li>)
@@ -12,7 +11,7 @@ class ToDoList extends Component {
         <ul>
           {allTasks}
         </ul>
-        <form className="form" onSubmit={createNewTask}>
+        <form id="task-form" className="form" onSubmit={(e, el) => createNewTask(e, el)}>
           <div className="form__group">
             <label className="form__label">New Task</label>
             <input className="form__input" type="text" name="content"/>
