@@ -8,8 +8,8 @@ class PlantEntryForm extends Component {
     return (
       <div>
         <form onSubmit={(e) => this.props.createNewEntry(e, plantId)}>
-          <input type="text" name="content"/>
-          <button >Create Entry</button>
+          <textarea rows="4" cols="102" className="plant-entry-input" type="text" name="content"/>
+          <button className="btn">submit</button>
         </form>
       </div>
     )

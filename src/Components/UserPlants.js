@@ -7,7 +7,7 @@ class UserPlants extends Component {
     const allPlants = plants !== undefined && plants.map(plant => <Plant plantObj={plant} key={plant.id}/>)
     return (
       <div>
-      <h3 className="heading-primary">My plants</h3>
+        <h3 className="heading-primary my-plants">My plants</h3>
         <div className="user-plants-container">
           {allPlants}
         </div>
