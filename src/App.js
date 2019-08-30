@@ -5,7 +5,6 @@ import SignUp from "./Components/SignUp.js"
 import Home from "./Components/Home.js"
 import Navigation from "./Components/Navigation.js"
 import UserProfile from "./Components/UserProfile.js"
-import Footer from "./Components/Footer.js"
 import PlantPage from "./Components/PlantPage.js"
 import "./css/styles.css"
 
@@ -147,7 +146,6 @@ handleLogin = (e) => {
        headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
       }
        let newTasks = this.state.tasks.filter(task => task.id !== id)
-       console.log(newTasks)
        fetch(`http://localhost:3000/tasks/${id}`, options)
         this.setState({
           tasks: newTasks
@@ -168,6 +166,7 @@ handleLogin = (e) => {
         fetch('http://localhost:3000/comments', options)
           .then(resp => resp.json())
           .then(resp => console.log(resp))
+          document.getElementById("plant-entry-form").reset();
       }
 
 
@@ -202,7 +201,6 @@ handleLogin = (e) => {
            <Route path="/userfeed" render={this.renderUserProfile}/>
            <Route path="/" component={Home}/>
         </Switch>
-        {/*}<Footer />*/}
       </div>
     )
   }

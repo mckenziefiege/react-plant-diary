@@ -4,10 +4,10 @@ import Task from './Task.js'
 class ToDoList extends Component {
   render() {
     const {tasks, deleteTask, createNewTask} = this.props
-    const allTasks = tasks !== undefined && tasks.map(task => <li><Task taskObj={task} key={task.id} deleteTask={deleteTask}/></li>)
+    const allTasks = tasks !== undefined && tasks.map((task, i) => <li><Task taskObj={task} key={`task ${i}`} deleteTask={deleteTask}/></li>)
     return (
       <div>
-        <h3 className="heading-primary">My To Do's</h3>
+        <h3 className="heading-primary">Plant Tasks</h3>
         <ul className="todos">
           {allTasks}
         </ul>
