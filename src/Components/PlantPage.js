@@ -25,7 +25,9 @@ class PlantPage extends Component {
    }
 
    renderComments = () => {
-    return this.props.comments.map((comment, i) => <Comment deleteComment={this.deleteComment} key={`comment ${i}`}comment={comment}/>)
+    let comments = this.props.comments.map((comment, i) => <Comment deleteComment={this.deleteComment} key={`comment ${i}`}comment={comment}/>)
+    if (comments.length === 0) return <p>No Plant Entries</p>
+    return comments
    }
 
   render() {

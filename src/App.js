@@ -163,10 +163,9 @@ handleLogin = (e) => {
              user_id: this.state.auth.currentUser.id
            })
           }
-        fetch('http://localhost:3000/comments', options)
-          .then(resp => resp.json())
-          .then(resp => console.log(resp))
-          document.getElementById("plant-entry-form").reset();
+        fetch('http://localhost:3000/comments', options);
+
+        document.location.reload(true);
       }
 
 
