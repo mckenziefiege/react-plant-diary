@@ -7,8 +7,8 @@ class ToDoList extends Component {
     const allTasks = tasks !== undefined && tasks.map(task => <li><Task taskObj={task} key={task.id} deleteTask={deleteTask}/></li>)
     return (
       <div>
-      <h3 className="heading-primary">My To Do's</h3>
-        <ul>
+        <h3 className="heading-primary">My To Do's</h3>
+        <ul className="todos">
           {allTasks}
         </ul>
         <form id="task-form" className="form" onSubmit={(e, el) => createNewTask(e, el)}>

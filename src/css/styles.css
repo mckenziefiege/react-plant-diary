@@ -125,14 +125,13 @@ a:active {
 
 .user-plants-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 65vw;
-  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 25px 0;
 }
 
 .plant-list-card__image {
   height: 15rem;
-  margin: 1rem;
+  margin: 20px;
   border-radius: 2px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
@@ -149,6 +148,10 @@ html {
 .user-profile {
   justify-content: center;
   display: flex;
+}
+
+.user-profile > * {
+  margin: 0 35px;
 }
 
 .plant-page {
@@ -202,4 +205,30 @@ html {
 .form__label {
   font-size: 12px;
   letter-spacing: 0.1rem;
+}
+
+.my-plants {
+  text-align: center;
+}
+
+.todos {
+  margin: 25px 0;
+}
+
+.form {
+  margin: 25px 0;
+}
+
+.comment {
+  width: 40vw;
+  margin: 25px 0;
+  background-color: #eee;
+  padding: 40px;
+  border-radius: 2px;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.05);
+}
+
+.plant-entry-input {
+  padding: 10px;
+  display: block;
 }
