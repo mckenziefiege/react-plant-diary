@@ -7,7 +7,7 @@ class Navigation extends Component {
     return (
       <div className="nav-container">
         <button className="nav-container__item btn" onClick={this.props.handleLogout}>Log Out</button>
-        <Link className="btn" to="/userfeed">Home</Link>
+        <Link className="nav-container__item btn" to="/userfeed">Home</Link>
       </div>
     )
   }

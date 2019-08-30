@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import WateringFrequencySelect from './WateringFrequencySelect.js'
 
 const NewPlantForm = (props) => (
@@ -34,7 +34,6 @@ const NewPlantForm = (props) => (
       </div>
     </form>
   </div>
-)
-
+);
 
 export default NewPlantForm;
