@@ -6,7 +6,6 @@ import PlantEntryForm from "./PlantEntryForm.js";
 class PlantPage extends Component {
 
   deletePlant = (id) => {
-
     const options = {
       method: 'DELETE',
       headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
@@ -16,9 +15,24 @@ class PlantPage extends Component {
       document.location.reload(true)
    }
 
+   deleteComment = (id) => {
+     const options = {
+       method: 'DELETE',
+       headers: {'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}`},
+      }
+       fetch(`http://localhost:3000/comments/${id}`, options)
+       document.location.reload(true)
+   }
+
+   renderComments = () => {
+    let comments = this.props.comments.map((comment, i) => <Comment deleteComment={this.deleteComment} key={`comment ${i}`}comment={comment}/>)
+    if (comments.length === 0) return <p>No Plant Entries</p>
+    return comments
+   }
+
   render() {
     const {plant, comments, userId} = this.props
-    const allComments = comments && comments.map((comment, i) => <Comment key={`comment ${i}`}comment={comment}/>)
+
     return (
       <div className="plant-page">
         <div>
@@ -31,7 +45,7 @@ class PlantPage extends Component {
         </div>
         <div>
           <PlantEntryForm plantId={plant && plant.id} userId={userId && userId} createNewEntry={this.props.createNewEntry}/>
-          {allComments}
+          {this.renderComments()}
         </div>
       </div>
     )
