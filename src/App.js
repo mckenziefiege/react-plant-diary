@@ -66,6 +66,7 @@ handleLogin = (e) => {
          tasks: resp.user.tasks
        })
      })
+     debugger
     this.props.history.push("/userfeed")
  }
 
