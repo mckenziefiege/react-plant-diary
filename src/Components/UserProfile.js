@@ -12,7 +12,10 @@ class UserProfile extends Component {
         <UserPlants plants={plants}/>
         <div>
           <ToDoList tasks={this.props.tasks} createNewTask={this.props.createNewTask} deleteTask={this.props.deleteTask}/>
-          <NewPlantForm createNewPlant={this.props.createNewPlant}/>
+          <div>
+            <h3 className="heading-primary">Add New Plant</h3>
+            <NewPlantForm createNewPlant={this.props.createNewPlant} type="new"/>
+          </div>
         </div>
       </div>
     )

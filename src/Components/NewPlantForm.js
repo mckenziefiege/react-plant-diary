@@ -3,31 +3,30 @@ import WateringFrequencySelect from './WateringFrequencySelect.js'
 
 const NewPlantForm = (props) => (
   <div>
-    <h3 className="heading-primary">Add New Plant</h3>
-    <form className="form" onSubmit={props.createNewPlant}>
+    <form className="form" onSubmit={props.type === "new" ? props.createNewPlant : props.editPlant}>
       <div className="form__group">
         <label className="form__label">Nickname</label>
-        <input className="form__input" type="text" name="nickname" placeholder="Fred"/>
+        <input className="form__input" type="text" name="nickname" value={props.plant && props.plant.nickname}/>
       </div>
       <div className="form__group">
         <label className="form__label">Species</label>
-        <input className="form__input" type="text" name="species" placeholder="Monstera Adansonii"/>
+        <input className="form__input" type="text" name="species" value={props.plant && props.plant.species}/>
       </div>
       <div className="form__group">
         <label className="form__label">Image</label>
-        <input className="form__input" type="text" name="image" placeholder="http://"/>
+        <input className="form__input" type="text" name="image" value={props.plant && props.plant.image}/>
       </div>
       <div className="form__group">
         <label className="form__label">Location in home</label>
-        <input className="form__input" type="text" name="location" placeholder="Living Room"/>
+        <input className="form__input" type="text" name="location" value={props.plant && props.plant.location}/>
       </div>
       <div className="form__group">
         <label className="form__label">Watering Frequency</label>
-        <WateringFrequencySelect />
+        <WateringFrequencySelect value={props.plant && props.plant.watering_frequency}/>
       </div>
       <div className="form__group">
         <label className="form__label">Date Obtained</label>
-        <input className="form__input" type="text" name="date_obtained" placeholder="5/25/2019"/>
+        <input className="form__input" type="text" name="date_obtained" value={props.plant && props.plant.date_obtained}/>
       </div>
       <div className="form__group">
         <input className="btn" type="submit" />
