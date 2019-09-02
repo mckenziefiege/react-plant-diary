@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom"
 import Comment from "./Comment.js";
 import PlantEntryForm from "./PlantEntryForm.js";
+import NewPlantForm from "./NewPlantForm.js";
 
 class PlantPage extends Component {
+  state = {
+    formShown: false
+  }
 
   deletePlant = (id) => {
     const options = {
@@ -30,9 +34,19 @@ class PlantPage extends Component {
     return comments
    }
 
+   editPlant = (e) => {
+     e.preventDefault()
+     console.log('in function')
+   }
+
+   updateForm = () => {
+     this.setState({
+       formShown: !this.state.formShown
+     })
+   }
+
   render() {
     const {plant, comments, userId} = this.props
-
     return (
       <div className="plant-page">
         <div>
@@ -42,6 +56,8 @@ class PlantPage extends Component {
           <p className="plant-page__description">Watering Frequency: {plant && plant.watering_frequency}</p>
           <p className="plant-page__description">Location: {plant && plant.location}</p>
           <button onClick={() => this.deletePlant(plant.id)} className="btn">Delete plant</button>
+          <button onClick={this.updateForm}className="btn">edit plant</button>
+          {this.state.formShown && <NewPlantForm type="edit" editPlant={this.editPlant} plant={plant && plant}/>}
         </div>
         <div>
           <PlantEntryForm plantId={plant && plant.id} userId={userId && userId} createNewEntry={this.props.createNewEntry}/>
