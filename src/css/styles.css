@@ -181,3 +181,8 @@ html {
 .entry-btn {
   margin: 15px 0;
 }
+
+.garbage-icon {
+  height: 20px;
+  cursor: pointer;
+}
