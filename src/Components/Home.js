@@ -6,7 +6,8 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-      <h1 className="heading-primary">Welcome to Plant Diary</h1>
+      <h1 className="plant-diary">Plant Diary</h1>
+      <h2 className="heading-primary">Welcome</h2>
         <div className="home-box">
           <Link to="/login"><button className="btn">Login</button></Link>
           <Link to="/signup"><button className="btn">Sign Up</button></Link>
