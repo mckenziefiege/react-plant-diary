@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import GarbageIcon from './GarbageIcon.js'
 
 class Comment extends Component {
 
@@ -8,7 +9,7 @@ class Comment extends Component {
       <div className="comment">
         <p>{comment.content}</p>
         <p>{comment.created_at}</p>
-        <button onClick={() => this.props.deleteComment(comment.id)} className="btn">delete</button>
+        <GarbageIcon deleteComment={this.props.deleteComment} id={comment.id}/>
       </div>
     )
   }
