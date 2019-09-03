@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import GarbageIcon from './GarbageIcon.js'
 
 class Task extends Component {
 
@@ -7,7 +8,7 @@ class Task extends Component {
     return (
       <div className="task">
         <p className="task-name">{taskObj.content} </p>
-        <button className="delete-btn" onClick={() => deleteTask(taskObj.id)}>X</button>
+        <GarbageIcon deleteItem={deleteTask} id={taskObj.id}/>
       </div>
     )
   }

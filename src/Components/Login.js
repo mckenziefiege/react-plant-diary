@@ -4,8 +4,8 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="heading-tertiary">Login</h3>
+      <div className="home">
+        <h3 className="heading-tertiary">Login to Plant Diary</h3>
         <form className="form" onSubmit={this.props.handleLogin}>
         <div className="form__group">
           <input className="form__input" type="text" name="username"/>

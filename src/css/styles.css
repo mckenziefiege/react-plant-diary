@@ -5,9 +5,20 @@
   src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+.home {
+  background-image: url("https://images.unsplash.com/photo-1564504358774-0b889fbd6252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 .nav-container {
   background-color: #5F955D;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .heading-primary {
@@ -185,4 +196,11 @@ html {
 .garbage-icon {
   height: 20px;
   cursor: pointer;
+}
+
+.plant-diary {
+  color: white;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }

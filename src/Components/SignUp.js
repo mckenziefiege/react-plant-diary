@@ -4,8 +4,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="heading-tertiary">Sign Up</h3>
+      <div className="home">
+        <h3 className="heading-tertiary">Sign Up for Plant Diary</h3>
         <form className="form" onSubmit={this.props.handleSignup}>
           <div className="form__group">
             <input className="form__input" type="text" name="firstname"/>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const GarbageIcon = (props) => (
-  <svg className="garbage-icon" onClick={() => props.deleteComment(props.id)} version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 59 59">
+  <svg className="garbage-icon" onClick={() => props.deleteItem(props.id)} version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 59 59">
     <g>
     	<path d="M29.5,51c0.552,0,1-0.447,1-1V17c0-0.553-0.448-1-1-1s-1,0.447-1,1v33C28.5,50.553,28.948,51,29.5,51z"/>
     	<path d="M19.5,51c0.552,0,1-0.447,1-1V17c0-0.553-0.448-1-1-1s-1,0.447-1,1v33C18.5,50.553,18.948,51,19.5,51z"/>

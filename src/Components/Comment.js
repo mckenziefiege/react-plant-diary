@@ -9,7 +9,7 @@ class Comment extends Component {
       <div className="comment">
         <p>{comment.content}</p>
         <p>{comment.created_at}</p>
-        <GarbageIcon deleteComment={this.props.deleteComment} id={comment.id}/>
+        <GarbageIcon deleteItem={this.props.deleteComment} id={comment.id}/>
       </div>
     )
   }
