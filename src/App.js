@@ -189,10 +189,9 @@ handleLogin = (e) => {
   }
 
   render() {
-    const token = localStorage.getItem('token')
     return (
       <div>
-      {token && <Navigation user={this.state.auth.currentUser} handleLogout={this.handleLogout} />}
+      {window.location.pathname !== '/' && <Navigation user={this.state.auth.currentUser} handleLogout={this.handleLogout} />}
         <Switch>
            <Route path="/login" render={this.renderLogin}/>
            <Route path="/signup" render={this.renderSignup}/>

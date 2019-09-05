@@ -7,8 +7,10 @@ class Comment extends Component {
     const {comment} = this.props
     return (
       <div className="comment">
-        <p>{comment.content}</p>
-        <p>{comment.created_at}</p>
+        <div>
+          <p className="comment__content">{comment.content}</p>
+          <p className="comment__date">{comment.readable_time}</p>
+        </div>
         <GarbageIcon deleteItem={this.props.deleteComment} id={comment.id}/>
       </div>
     )

@@ -6,7 +6,7 @@ class ToDoList extends Component {
     const {tasks, deleteTask, createNewTask} = this.props
     const allTasks = tasks !== undefined && tasks.map((task, i) => <li><Task taskObj={task} key={`task ${i}`} deleteTask={deleteTask}/></li>)
     return (
-      <div>
+      <div className="todo-list">
         <h3 className="heading-primary">Plant Tasks</h3>
         <ul className="todos">
           {allTasks}
